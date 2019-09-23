@@ -16,8 +16,10 @@ import android.widget.Toast;
 import java.io.IOException;
 
 public class ImplicitIntentActivity extends AppCompatActivity {
+
     private static final String TAG = ImplicitIntentActivity.class.getCanonicalName();
     private static final int GALLERY_REQUEST_CODE = 1;
+
     private ImageView avatarImage;
 
     @Override
@@ -33,6 +35,7 @@ public class ImplicitIntentActivity extends AppCompatActivity {
         if (requestCode == RESULT_CANCELED) {
             return;
         }
+
         if (requestCode == GALLERY_REQUEST_CODE) {
             if (data != null) {
                 try {
@@ -47,7 +50,7 @@ public class ImplicitIntentActivity extends AppCompatActivity {
         }
     }
 
-    public void handleChangeAvatar(View view) {
+    public void changeAvatar(View view) {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, GALLERY_REQUEST_CODE);
     }

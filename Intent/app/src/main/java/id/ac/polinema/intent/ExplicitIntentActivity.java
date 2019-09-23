@@ -8,22 +8,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class ExplicitIntentActivity extends AppCompatActivity {
-
-    EditText nameInput;
-    TextView teksView;
-
+    TextView text_output;
+    EditText input_name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_explicit_intent);
-        nameInput = findViewById(R.id.input_name);
-        teksView = findViewById(R.id.text_output);
+        text_output = findViewById(R.id.text_output);
+        input_name = findViewById(R.id.input_name);
     }
 
-
-    public void button(View view) {
-        String name = nameInput.getText().toString();
-        teksView.setText("Hello " + name);
+    public void getDataText(View view) {
+        text_output.setText(input_name.getText());
     }
 }
-
